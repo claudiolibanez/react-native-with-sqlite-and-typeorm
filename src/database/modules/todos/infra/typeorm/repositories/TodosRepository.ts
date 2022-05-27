@@ -18,7 +18,7 @@ class TodosRepository implements ITodosRepository {
     return todos;
   }
 
-  public async findOneById(id: number): Promise<TodoModel> {
+  public async findOneById(id: string): Promise<TodoModel> {
     const todos = await this.ormRepository.findOneBy({ id });
 
     return todos;

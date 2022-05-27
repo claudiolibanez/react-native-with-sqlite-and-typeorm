@@ -8,7 +8,7 @@ const Home = () => {
   const { todosRepository, categoriesRepository } = useDatabaseConnection();
   const { todos, isLoading, fetchTodos } = useFetchTodos();
 
-  console.log(todos);
+  console.log(JSON.stringify(todos, null, 2));
 
   const handleCreateTodo = async () => {
     try {
@@ -17,8 +17,6 @@ const Home = () => {
         description: 'description',
         categories: [],
       });
-
-      // const todo = await todosRepository.findOneById(1);
 
       const category01 = await categoriesRepository.create({
         name: 'category 01',
